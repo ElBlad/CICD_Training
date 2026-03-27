@@ -6,14 +6,14 @@ test.describe('Practice Automation', () => {
     await page.waitForLoadState('domcontentloaded');
   });
 
-  test('should display the correct page title on the home page', async ({ page }) => {
+  test('display the correct page title on the home page', async ({ page }) => {
     await test.info().attach('title_validation', {
       body: await page.screenshot({ fullPage: true }),
       contentType: 'image/png',
     });
     await expect(page).toHaveTitle('Test Login | Practice Test Automation');
   });
-  test('should login', async ({ page }) => {
+  test('login', async ({ page }) => {
     const expected = 'Logged In Successfully';
     const username = page.getByRole('textbox', { name: 'Username' });
     const password = page.getByRole('textbox', { name: 'Password' });
