@@ -33,8 +33,8 @@ jobs:
 
       - name: Post PR comment
         env:
-         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-         gh pr comment ${{ github.event.pull_request.number }} \
-          --repo ${{ github.repository }} \
-          --body "⚠️ **Before merging**, please manually run the [Testing workflow](https://github.com/ElBlad/CICD_Training/actions/workflows/deploy-report.yml) and confirm it passes."
+          gh pr comment ${{ github.event.pull_request.number }} \
+           --repo ${{ github.repository }} \
+           --body "⚠️ **Before merging**, please manually run the [Testing workflow](https://github.com/ElBlad/CICD_Training/actions/workflows/deploy-report.yml) and confirm it passes."
